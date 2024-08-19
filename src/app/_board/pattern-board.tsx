@@ -63,6 +63,7 @@ export default function PatternBoard() {
     if (difficultyNumber.selectedCount != 0) {
       getBoardDataWrapper();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isModeSolar, difficultyNumber]);
 
   useEffect(() => {
@@ -79,6 +80,7 @@ export default function PatternBoard() {
           .toReversed()
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ascendingOrder]);
 
   return (

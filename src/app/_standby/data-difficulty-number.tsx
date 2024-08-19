@@ -130,6 +130,7 @@ export default function DataDifficultyNumber({
     } else {
       setRange({ status: "normal" });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [difficultyNumber.selectedCount]);
 
   // 난이도가 1개 선택된 상태에서, 마우스 입력에 따라 미리 보여주는 범위가 설정됨
@@ -157,6 +158,7 @@ export default function DataDifficultyNumber({
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [difficultyNumber.selectedCount, difficultyMouseOverNumber]);
 
   return (
