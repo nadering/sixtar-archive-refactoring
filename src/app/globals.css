@@ -2,12 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-// Filters with Commentations
-// solar-200: [filter:invert(83%)_sepia(9%)_saturate(908%)_hue-rotate(298deg)_brightness(101%)_contrast(102%)]
-// solar-400: [filter:invert(65%)_sepia(28%)_saturate(1675%)_hue-rotate(301deg)_brightness(103%)_contrast(99%)]
-// lunar-800: [filter:invert(22%)_sepia(39%)_saturate(1507%)_hue-rotate(209deg)_brightness(91%)_contrast(85%)]
 
-// Global Styles
-html {
-  font-size: 24px;
+/*
+Global
+*/
+html, body {
+  @apply scrollbar-hide;
+}
+
+
+/* 
+Filters with Commentations
+- solar-200: [filter:invert(83%)_sepia(9%)_saturate(908%)_hue-rotate(298deg)_brightness(101%)_contrast(102%)]
+- solar-300: [filter:invert(69%)_sepia(16%)_saturate(1079%)_hue-rotate(298deg)_brightness(103%)_contrast(103%)]
+- solar-400: [filter:invert(65%)_sepia(28%)_saturate(1675%)_hue-rotate(301deg)_brightness(103%)_contrast(99%)]
+- solar-600: [filter:invert(21%)_sepia(86%)_saturate(2951%)_hue-rotate(324deg)_brightness(89%)_contrast(101%)]
+- lunar-800: [filter:invert(22%)_sepia(39%)_saturate(1507%)_hue-rotate(209deg)_brightness(91%)_contrast(85%)]
+*/
+
+
+/*
+Fonts
+- IBM Plex Sans KR/JP
+*/
+@font-face {
+  font-family: "IBM Plex Sans KR";
+  font-weight: 100;
+  src: url("/fonts/IBMPlexSansKR-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans KR";
+  font-weight: 200;
+  src: url("/fonts/IBMPlexSansKR-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans KR";
+  font-weight: 300;
+  src: url("/fonts/IBMPlexSansKR-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans KR";
+  font-weight: 400;
+  src: url("/fonts/IBMPlexSansKR-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans KR";
+  font-weight: 500;
+  src: url("/fonts/IBMPlexSansKR-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans KR";
+  font-weight: 600;
+  src: url("/fonts/IBMPlexSansKR-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans KR";
+  font-weight: 700;
+  src: url("/fonts/IBMPlexSansKR-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans JP";
+  font-weight: 100;
+  src: url("/fonts/IBMPlexSansJP-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans JP";
+  font-weight: 200;
+  src: url("/fonts/IBMPlexSansJP-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans JP";
+  font-weight: 300;
+  src: url("/fonts/IBMPlexSansJP-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans JP";
+  font-weight: 400;
+  src: url("/fonts/IBMPlexSansJP-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans JP";
+  font-weight: 500;
+  src: url("/fonts/IBMPlexSansJP-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans JP";
+  font-weight: 600;
+  src: url("/fonts/IBMPlexSansJP-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans JP";
+  font-weight: 700;
+  src: url("/fonts/IBMPlexSansJP-Bold.woff2") format("woff2");
 }
