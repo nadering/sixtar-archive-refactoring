@@ -4,7 +4,7 @@
 
 
 /*
-Global
+전역
 */
 html, body {
   @apply scrollbar-hide;
@@ -12,7 +12,7 @@ html, body {
 
 
 /* 
-Filters with Commentations
+주석 처리해둔 필터
 - solar-200: [filter:invert(83%)_sepia(9%)_saturate(908%)_hue-rotate(298deg)_brightness(101%)_contrast(102%)]
 - solar-300: [filter:invert(69%)_sepia(16%)_saturate(1079%)_hue-rotate(298deg)_brightness(103%)_contrast(103%)]
 - solar-400: [filter:invert(65%)_sepia(28%)_saturate(1675%)_hue-rotate(301deg)_brightness(103%)_contrast(99%)]
@@ -22,7 +22,7 @@ Filters with Commentations
 
 
 /*
-Fonts
+폰트 (식스타 게이트에서 사용하는 폰트)
 - IBM Plex Sans KR/JP
 */
 @font-face {

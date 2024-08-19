@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Uparrow from "@public/uparrow.webp";
 
+// 사이트 맨 위로 스크롤해주는 컴포넌트
 export default function BackToTopButton() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 

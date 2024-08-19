@@ -1,6 +1,7 @@
 import Image from "next/image";
 import InformationRami from "@public/information_rami.webp";
 
+// 메인 화면에서 사이트 사용 방법을 안내해주는 컴포넌트
 export default function HomeInformation() {
   return (
     <div className="flex flex-col grow justify-center items-center px-4 py-8">

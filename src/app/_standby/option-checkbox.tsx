@@ -5,7 +5,7 @@ interface checkboxProps {
   onChange: () => void;
 }
 
-// 옵션 - 체크박스
+// 옵션에 사용되는 체크박스
 export default function OptionCheckbox({
   id,
   text,

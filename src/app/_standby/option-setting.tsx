@@ -8,6 +8,7 @@ import {
 } from "@/store";
 import OptionCheckbox from "./option-checkbox";
 
+// 곡 제목 표기, DLC, 난이도 종류 등 서열표 표기에 관여된 옵션 설정 컴포넌트
 export default function OptionSetting() {
   // 곡 제목
   const [displayMusicTitle, setDisplayMusicTitle] = useAtom(

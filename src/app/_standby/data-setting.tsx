@@ -7,6 +7,7 @@ import SolarLogo from "@logo/solar.webp";
 import LunarLogo from "@logo/lunar.webp";
 import DataDifficultyNumber from "./data-difficulty-number";
 
+// 모드와 난이도 등, 서열표 API 호출에 직접적으로 관여된 데이터 설정 컴포넌트
 export default function DataSetting() {
   // 현재 모드
   const [isModeSolar, setIsModeSolar] = useAtom(isModeSolarAtom);

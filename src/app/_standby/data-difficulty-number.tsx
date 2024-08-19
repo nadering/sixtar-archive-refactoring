@@ -8,6 +8,7 @@ interface rangeType {
   status: "normal" | "selected" | "inRange" | "outRange";
 }
 
+// 난이도 숫자 하나하나를 맡는 컴포넌트
 export default function DataDifficultyNumber({
   difficulty,
 }: {
