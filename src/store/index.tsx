@@ -8,7 +8,7 @@ export const isUsingFullscreenModalAtom = atom(false);
 export const isModeSolarAtom = atom(true);
 
 // Difficulty Number
-interface difficultyNumberType {
+export interface difficultyNumberType {
   selectedCount: number;
   firstNum?: number;
   secondNum?: number;

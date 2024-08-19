@@ -11,6 +11,12 @@ const config: Config = {
       sans: ["'IBM Plex Sans KR'", "'IBM Plex Sans JP'", "sans-serif"],
     },
     extend: {
+      boxShadow: {
+        "music-thumbnail": "4px 4px 3px #b4b4b4"
+      },
+      lineHeight: {
+        "music-title": "110%"
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
@@ -60,12 +66,12 @@ const config: Config = {
           950: "#272844",
         },
         // DLC Colors
-        "flower-and-destiny": "#bf0048",
-        "luminous-and-darkness": "#c9c8dde",
+        "flower-and-destiny": "#d40046",
+        "luminous-and-darkness": "#c9c8de",
         "touhou-project-pack-1": "#f5c0ef",
         "pocotone": "#ff3985",
         "yomoha-planet": "#eea2a7",
-        "wacca": "fed000",
+        "wacca": "#fed000",
         "oshiribeat": "#78ce04",
         "dystopia": "#307ef3",
       },
