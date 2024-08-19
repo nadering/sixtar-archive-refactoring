@@ -14,7 +14,7 @@ export default function Footer() {
       <p className="text-black text-base font-normal">
         Special Thanks to{" "}
         <a
-          className="font-semibold underline"
+          className="font-semibold underline underline-offset-2"
           href="https://x.com/suisou610"
           target="_blank"
           rel="noopener noreferrer"
