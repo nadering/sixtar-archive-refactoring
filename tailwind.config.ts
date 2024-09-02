@@ -74,6 +74,7 @@ const config: Config = {
         "wacca": "#fed000",
         "oshiribeat": "#78ce04",
         "dystopia": "#307ef3",
+        "united-netwalk": "#e54e4e",
       },
     },
   },

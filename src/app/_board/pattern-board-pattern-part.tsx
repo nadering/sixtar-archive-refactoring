@@ -36,7 +36,8 @@ export default function PatternBoardPatternPart({
     | "ymh"
     | "wac"
     | "osh"
-    | "dys";
+    | "dys"
+    | "uni";
   const dlcColorMatching = {
     fd: "text-flower-and-destiny",
     ld: "text-luminous-and-darkness",
@@ -46,6 +47,7 @@ export default function PatternBoardPatternPart({
     wac: "text-wacca",
     osh: "text-oshiribeat",
     dys: "text-dystopia",
+    uni: "text-united-netwalk",
   };
 
   // BPM 문자열 미리 생성
