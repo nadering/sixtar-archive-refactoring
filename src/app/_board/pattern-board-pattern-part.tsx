@@ -79,7 +79,7 @@ export default function PatternBoardPatternPart({
           <p
             className={`absolute left-0 top-0 bg-black/[.75] text-base ${
               dlcColorMatching[dlcCode.toLowerCase() as dlcCodeList]
-            } font-semibold whitespace-pre-line leading-none px-2 py-1`}
+            } font-semibold whitespace-pre-line leading-none px-[6px] py-[2px]`}
           >
             {dlcCode.toUpperCase()}
           </p>
@@ -95,7 +95,7 @@ export default function PatternBoardPatternPart({
           />
         )}
         {displayBpm && (
-          <p className="absolute left-0 bottom-0 bg-black/[.75] text-base text-gray-300 font-semibold whitespace-pre-line leading-none px-2 py-1">
+          <p className="absolute left-0 bottom-0 bg-black/[.75] text-base text-gray-300 font-semibold whitespace-pre-line leading-none px-[6px] py-[2px]">
             {bpmString}
           </p>
         )}

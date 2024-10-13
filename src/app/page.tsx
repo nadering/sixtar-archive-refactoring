@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <FullscreenDarkModal />
       <BackToTopButton />
-      <div className="flex flex-col w-screen max-w-5xl h-full min-h-screen bg-white mx-auto lg:border-x-2 lg:border-gray-500 lg:shadow-2xl">
+      <div className="flex flex-col w-screen max-w-5xl h-full min-h-screen bg-white mx-auto lg:border-x-[1px] lg:border-gray-800 lg:shadow-2xl">
         <Header />
         <MainBoard />
         <Footer />

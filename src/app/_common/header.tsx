@@ -26,7 +26,7 @@ export default function Header() {
     <header className="flex flex-row-reverse h-16 border-b-2 border-gray-500 px-1">
       <div className="flex flex-col items-end" ref={standbyModalRef}>
         <Image
-          className={`aspect-square cursor-pointer select-none duration-150
+          className={`aspect-square cursor-pointer select-none [-webkit-user-drag:none] duration-150
           ${
             standbyModalActive
               ? filterVariants["active"]
