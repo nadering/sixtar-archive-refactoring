@@ -93,6 +93,7 @@ export default function PatternBoard() {
           src={isModeSolar ? SolarLogo : LunarLogo}
           alt="mode-logo"
           height={36}
+          priority
         />
         <p
           className={`text-3xl text-center font-semibold ${

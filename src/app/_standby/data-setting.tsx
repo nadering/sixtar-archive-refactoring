@@ -40,6 +40,7 @@ export default function DataSetting() {
           alt="mode-logo"
           width={120}
           onClick={handleModeChange}
+          priority
         />
       </div>
       <div className="flex flex-col items-center">

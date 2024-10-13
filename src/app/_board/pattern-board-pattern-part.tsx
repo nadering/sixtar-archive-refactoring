@@ -91,6 +91,7 @@ export default function PatternBoardPatternPart({
             alt={`${type}`}
             width={24}
             height={27}
+            priority
           />
         )}
         {displayBpm && (
