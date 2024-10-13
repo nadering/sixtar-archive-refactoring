@@ -6,10 +6,10 @@ export default function Footer() {
       <p className="text-black text-base font-normal">
         본 사이트는 게임{" "}
         <span className="font-semibold">"식스타 게이트: 스타트레일"</span>의 팬
-        사이트이며,
-        <br />
-        사이트 내 사용된 모든 게임 컨텐츠의 저작권은{" "}
-        <span className="font-semibold">Lyrebird Studio</span>에 있습니다.
+        사이트이며, {" "}
+        <br className="hidden sm:inline" />
+        사이트 내 사용된 모든 게임 컨텐츠의 저작권은 {" "}
+        <span className="font-semibold">STARLIKE Inc.</span>에 있습니다.
       </p>
       <p className="text-black text-base font-normal">
         Special Thanks to{" "}
