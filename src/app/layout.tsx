@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sixtar-Archive",
-  description: "Sixtar-Archive ver_2.0.0",
+  description: "리듬 게임 Sixtar Gate: STARTRAIL의 서열표 기능을 제공하는 사이트입니다.",
 };
 
 export default function RootLayout({
