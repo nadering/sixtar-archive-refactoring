@@ -15,6 +15,25 @@ export default function Footer() {
         사이트 내 사용된 모든 게임 컨텐츠의 저작권은{" "}
         <span className="font-semibold">STARLIKE Inc.</span>에 있습니다.
       </p>
+      <div className="flex flex-col items-start gap-x-0 text-black text-base font-normal sm:flex-row sm:gap-x-2">
+        <a
+          className="hover:font-semibold"
+          href="https://forms.gle/qJMFagZ5VHmGYMZR9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          층수 조정 요청
+        </a>
+        <span className="hidden sm:inline">|</span>
+        <a
+          className="hover:font-semibold"
+          href="https://forms.gle/HyzQqfuoPodimTZR9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          사이트 개선사항 요청
+        </a>
+      </div>
       <p className="text-black text-base font-normal">
         Special Thanks to{" "}
         <a
