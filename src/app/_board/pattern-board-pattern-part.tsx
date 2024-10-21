@@ -38,7 +38,12 @@ export default function PatternBoardPatternPart({
     | "osh"
     | "dys"
     | "uni";
-  const dlcColorMatching = {
+    
+  type dlcTailwindColorList = {
+    [key in dlcCodeList]: string;
+  };
+
+  const dlcColorMatching: dlcTailwindColorList = {
     fd: "text-flower-and-destiny",
     ld: "text-luminous-and-darkness",
     th1: "text-touhou-project-pack-1",
