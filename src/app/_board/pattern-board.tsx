@@ -15,7 +15,7 @@ import PatternBoardDifficultyPart from "./pattern-board-difficutly-part";
 
 // 서열표 컴포넌트
 export default function PatternBoard() {
-  //
+  // 서열표 데이터
   const [boardData, setBoardData] = useState<DifficultyBoardProp[]>([]);
 
   const isModeSolar = useAtomValue(isModeSolarAtom);
