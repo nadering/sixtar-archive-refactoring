@@ -1,12 +1,12 @@
 import { useAtomValue } from "jotai";
 import Image from "next/image";
-import { PatternProp } from "@/apis";
+import { PatternProp } from "@apis";
 import {
   displayMusicTitleAtom,
   displayDlcAtom,
   displayDifficultyTypeAtom,
   displayBpmAtom,
-} from "@/store";
+} from "@store";
 
 // 패턴 단일 컴포넌트
 export default function PatternBoardPatternPart({

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useAtom } from "jotai";
-import { isModeSolarAtom, difficultyNumberAtom } from "@/store";
+import { isModeSolarAtom, difficultyNumberAtom } from "@store";
 import Image from "next/image";
 import SolarLogo from "@logo/solar.webp";
 import LunarLogo from "@logo/lunar.webp";

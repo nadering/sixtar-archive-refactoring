@@ -1,3 +1,4 @@
+// 체크박스 프로퍼티
 interface checkboxProps {
   id: string;
   text: string;

@@ -1,4 +1,4 @@
-import { DifficultyBoardProp } from "@/apis";
+import { DifficultyBoardProp } from "@apis";
 import PatternBoardFloorPart from "./pattern-board-floor-part";
 
 // 현재 난이도 및 해당하는 층 목록 컴포넌트

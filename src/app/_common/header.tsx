@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef } from "react";
+import { useModal } from "@hooks";
 import Image from "next/image";
-import useModal from "@/hooks/useModal";
 import MainLogo from "@logo/main.webp";
-import { StandbyModal } from "@/app/_standby";
+import { StandbyModal } from "@app/_standby";
 
 export default function Header() {
   const standbyModalRef = useRef(null);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useAtomValue } from "jotai";
-import { difficultyNumberAtom } from "@/store";
+import { difficultyNumberAtom } from "@store";
 import HomeInformation from "./home-information";
 import PatternBoard from "./pattern-board";
 

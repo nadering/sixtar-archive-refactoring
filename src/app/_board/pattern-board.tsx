@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useAtomValue } from "jotai";
-import Image from "next/image";
 import {
   isModeSolarAtom,
   difficultyNumberAtom,
   ascendingOrderAtom,
-} from "@/store";
-import { getBoardDataByDifficultyNumber, DifficultyBoardProp } from "@/apis";
+} from "@store";
+import { getBoardDataByDifficultyNumber, DifficultyBoardProp } from "@apis";
+import Image from "next/image";
 import SolarLogo from "@logo/solar.webp";
 import LunarLogo from "@logo/lunar.webp";
 import PatternBoardDifficultyPart from "./pattern-board-difficutly-part";

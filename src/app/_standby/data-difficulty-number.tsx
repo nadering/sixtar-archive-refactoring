@@ -1,7 +1,7 @@
 "use client";
 
 import { useAtom } from "jotai";
-import { difficultyNumberAtom, difficultyMouseOverNumberAtom } from "@/store";
+import { difficultyNumberAtom, difficultyMouseOverNumberAtom } from "@store";
 import { useState, useEffect } from "react";
 
 interface rangeType {

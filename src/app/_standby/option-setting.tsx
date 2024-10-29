@@ -7,7 +7,7 @@ import {
   displayDifficultyTypeAtom,
   displayBpmAtom,
   ascendingOrderAtom,
-} from "@/store";
+} from "@store";
 import OptionCheckbox from "./option-checkbox";
 import { useEffect } from "react";
 
