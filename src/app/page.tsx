@@ -1,10 +1,5 @@
-import {
-  Header,
-  Footer,
-  FullscreenDarkModal,
-  BackToTopButton,
-} from "@/app/_common";
-import MainBoard from "./_board/main-board";
+import { Header, Footer, FullscreenDarkModal, BackToTopButton } from "@common";
+import { MainBoard } from "@board";
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from "react";
 import { useSetAtom } from "jotai";
-import { isUsingFullscreenModalAtom } from "@/store";
+import { isUsingFullscreenModalAtom } from "@store";
 
 // 모달 부분을 클릭하면 창이 열리고 유지되며,
 // 모달 외의 부분을 클릭하면 창이 닫히는 Custom Hook
