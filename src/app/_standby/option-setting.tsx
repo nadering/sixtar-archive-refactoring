@@ -32,13 +32,6 @@ export default function OptionSetting() {
   // 오름차순 정렬
   const [ascendingOrder, setAscendingOrder] = useAtom(ascendingOrderAtom);
 
-  // localStorage 활용
-  const localMusicTitle = localStorage.getItem("displayMusicTitle");
-  const localDlc = localStorage.getItem("displayDlc");
-  const localDifficultyType = localStorage.getItem("displayDifficultyType");
-  const localBpm = localStorage.getItem("displayBpm");
-  const localAscendingOrder = localStorage.getItem("ascendingOrder");
-
   // localStorage에 저장된 값이 true/false인지 확인
   const isBooleanString = (str: string | null) => {
     if (str == null) return false;
@@ -47,6 +40,13 @@ export default function OptionSetting() {
   };
 
   useEffect(() => {
+    // localStorage 활용
+    const localMusicTitle = localStorage.getItem("displayMusicTitle");
+  const localDlc = localStorage.getItem("displayDlc");
+  const localDifficultyType = localStorage.getItem("displayDifficultyType");
+  const localBpm = localStorage.getItem("displayBpm");
+  const localAscendingOrder = localStorage.getItem("ascendingOrder");
+
     // localStorage에 저장된 값을 적용함
     if (isBooleanString(localMusicTitle))
       setDisplayMusicTitle(JSON.parse(localMusicTitle!));
@@ -69,11 +69,7 @@ export default function OptionSetting() {
       <OptionCheckbox
         id="display-music-title"
         text="곡 제목"
-        defaultChecked={
-          isBooleanString(localMusicTitle)
-            ? JSON.parse(localMusicTitle!)
-            : displayMusicTitle
-        }
+        defaultChecked={displayMusicTitle}
         onChange={() => {
           localStorage.setItem(
             "displayMusicTitle",
@@ -85,9 +81,7 @@ export default function OptionSetting() {
       <OptionCheckbox
         id="display-dlc"
         text="DLC"
-        defaultChecked={
-          isBooleanString(localDlc) ? JSON.parse(localDlc!) : displayDlc
-        }
+        defaultChecked={displayDlc}
         onChange={() => {
           localStorage.setItem("displayDlc", (!displayDlc).toString());
           setDisplayDlc((prev) => !prev);
@@ -96,11 +90,7 @@ export default function OptionSetting() {
       <OptionCheckbox
         id="display-difficulty-type"
         text="난이도 종류"
-        defaultChecked={
-          isBooleanString(localDifficultyType)
-            ? JSON.parse(localDifficultyType!)
-            : displayDifficultyType
-        }
+        defaultChecked={displayDifficultyType}
         onChange={() => {
           localStorage.setItem(
             "displayDifficultyType",
@@ -112,9 +102,7 @@ export default function OptionSetting() {
       <OptionCheckbox
         id="display-bpm"
         text="BPM"
-        defaultChecked={
-          isBooleanString(localBpm) ? JSON.parse(localBpm!) : displayBpm
-        }
+        defaultChecked={displayBpm}
         onChange={() => {
           localStorage.setItem("displayBpm", (!displayBpm).toString());
           setDisplayBpm((prev) => !prev);
@@ -123,11 +111,7 @@ export default function OptionSetting() {
       <OptionCheckbox
         id="ascending-order"
         text="오름차순 정렬"
-        defaultChecked={
-          isBooleanString(localAscendingOrder)
-            ? JSON.parse(localAscendingOrder!)
-            : ascendingOrder
-        }
+        defaultChecked={ascendingOrder}
         onChange={() => {
           localStorage.setItem("ascendingOrder", (!ascendingOrder).toString());
           setAscendingOrder((prev) => !prev);
