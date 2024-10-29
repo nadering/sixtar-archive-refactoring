@@ -2,10 +2,11 @@ const API_URL = "https://api.sixtar-archive.kr";
 export default API_URL;
 
 import {
-  getBoardDataByDifficultyNumber,
+  getSingleBoardData,
+  getMultipleBoardData,
   PatternProp,
   FloorBoardProp,
   DifficultyBoardProp,
 } from "./get-board-data";
-export { getBoardDataByDifficultyNumber };
+export { getSingleBoardData, getMultipleBoardData };
 export type { PatternProp, FloorBoardProp, DifficultyBoardProp };

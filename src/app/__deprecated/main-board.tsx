@@ -1,3 +1,6 @@
+/* 
+// Deprecated: NO SSR Components
+
 "use client";
 
 import { useAtomValue } from "jotai";
@@ -15,3 +18,4 @@ export default function MainBoard() {
     </div>
   );
 }
+ */

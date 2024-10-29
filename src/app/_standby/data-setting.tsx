@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
+import { useRouter } from "next/navigation";
 import { isModeSolarAtom, difficultyNumberAtom } from "@store";
 import Image from "next/image";
 import SolarLogo from "@logo/solar.webp";
@@ -11,16 +12,34 @@ import DataDifficultyNumber from "./data-difficulty-number";
 
 // 모드와 난이도 등, 서열표 API 호출에 직접적으로 관여된 데이터 설정 컴포넌트
 export default function DataSetting() {
+  // Router
+  const router = useRouter();
+
   // 애니메이션을 위한 Ref
   const resetButtonRef = useRef<HTMLButtonElement>(null);
 
   // 현재 모드 및 난이도
   const [isModeSolar, setIsModeSolar] = useAtom(isModeSolarAtom);
-  const [difficultyNumber, setDifficultyNumber] = useAtom(difficultyNumberAtom);
+  const difficultyNumber = useAtomValue(difficultyNumberAtom);
 
   // 모드 변경
   const handleModeChange = () => {
-    setIsModeSolar((prev) => !prev);
+    let modeText: string;
+    if (isModeSolar) {
+      modeText = "lunar";
+    } else {
+      modeText = "solar";
+    }
+
+    if (difficultyNumber.selectedCount == 0) {
+      setIsModeSolar((prev) => !prev);
+    } else if (difficultyNumber.selectedCount == 1) {
+      router.push(`/${modeText}/${difficultyNumber.firstNum}`);
+    } else if (difficultyNumber.selectedCount == 2) {
+      router.push(
+        `/${modeText}/${difficultyNumber.firstNum}/${difficultyNumber.secondNum}`
+      );
+    }
   };
 
   // 난이도 초기화 및 애니메이션 실행
@@ -39,9 +58,7 @@ export default function DataSetting() {
     }
 
     // 난이도 초기화
-    setDifficultyNumber({
-      selectedCount: 0,
-    });
+    router.push("/");
   };
 
   // 모드에 따른 필터 적용값

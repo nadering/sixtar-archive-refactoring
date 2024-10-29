@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useAtom } from "jotai";
 import {
   displayMusicTitleAtom,
@@ -9,7 +10,6 @@ import {
   ascendingOrderAtom,
 } from "@store";
 import OptionCheckbox from "./option-checkbox";
-import { useEffect } from "react";
 
 // 곡 제목 표기, DLC, 난이도 종류 등 서열표 표기에 관여된 옵션 설정 컴포넌트
 export default function OptionSetting() {

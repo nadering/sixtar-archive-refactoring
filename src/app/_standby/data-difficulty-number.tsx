@@ -1,8 +1,9 @@
 "use client";
 
-import { useAtom } from "jotai";
-import { difficultyNumberAtom, difficultyMouseOverNumberAtom } from "@store";
 import { useState, useEffect } from "react";
+import { useAtom, useAtomValue } from "jotai";
+import { useRouter } from "next/navigation";
+import { difficultyNumberAtom, difficultyMouseOverNumberAtom, isModeSolarAtom } from "@store";
 
 interface rangeType {
   status: "normal" | "selected" | "inRange" | "outRange";
@@ -14,6 +15,12 @@ export default function DataDifficultyNumber({
 }: {
   difficulty: number;
 }) {
+  // Router
+  const router = useRouter();
+
+  // 현재 모드
+  const isModeSolar = useAtomValue(isModeSolarAtom);
+  
   // 현재 난이도가 범위에 속해있는지 아닌지
   const [range, setRange] = useState<rangeType>({
     status: "normal",
@@ -35,6 +42,11 @@ export default function DataDifficultyNumber({
     outRange: "!text-gray-200 !font-medium !cursor-default",
   };
 
+  // 현재 모드에 따른 문자열 반환
+  const getModeText = () => {
+    return isModeSolar ? "solar" : "lunar";
+  }
+
   // 난이도가 마우스 오버됐을 때 이벤트 처리
   const handleMouseOver = () => {
     setDifficultyMouseOverNumber(difficulty);
@@ -48,51 +60,32 @@ export default function DataDifficultyNumber({
   // 난이도가 클릭됐을 때 이벤트 처리
   const handleClick = () => {
     if (difficultyNumber.selectedCount == 0) {
-      // 기존에 클릭된 난이도가 없다면, 현재 난이도가 첫 번째 선택된 난이도
-      setDifficultyNumber({
-        selectedCount: 1,
-        firstNum: difficulty,
-      });
+      // 기존에 클릭된 난이도가 없다면,
+      // 현재 난이도가 첫 번째 선택된 난이도
+      router.push(`/${getModeText()}/${difficulty}`);
     } else if (difficultyNumber.selectedCount == 1) {
       // 기존에 클릭된 난이도가 1개 있다면,
       // 해당 난이도가 다시 클릭되었는지 아니면 새로운 난이도가 클릭되었는지에 따라 다름
       if (difficultyNumber.firstNum! == difficulty) {
         // 클릭되어 있던 난이도가 다시 클릭된 경우, 선택된 난이도가 없어짐
-        setDifficultyNumber({
-          selectedCount: 0,
-        });
+        router.push("/");
       } else {
         // 새로운 난이도가 클릭된 경우, 선택된 난이도가 2개가 됨
         if (difficultyNumber.firstNum! > difficulty) {
-          setDifficultyNumber({
-            selectedCount: 2,
-            firstNum: difficulty,
-            secondNum: difficultyNumber.firstNum,
-          });
+          router.push(`/${getModeText()}/${difficulty}/${difficultyNumber.firstNum}`);
         } else {
-          setDifficultyNumber({
-            selectedCount: 2,
-            firstNum: difficultyNumber.firstNum,
-            secondNum: difficulty,
-          });
+          router.push(`/${getModeText()}/${difficultyNumber.firstNum}/${difficulty}`);
         }
       }
     } else {
       // 기존에 클릭된 난이도가 2개 있다면,
-      // 선택되어 있던 난이도를 다시 클릭할 때만 1개로 돌아감
+      // 선택되어 있던 난이도를 다시 클릭할 때만 1개로 돌아가며,
+      // 현재 난이도에 마우스 오버되도록 보정
       if (difficultyNumber.firstNum! == difficulty) {
-        setDifficultyNumber({
-          selectedCount: 1,
-          firstNum: difficultyNumber.secondNum,
-        });
-        // 현재 난이도에 마우스 오버되도록 보정
+        router.push(`/${getModeText()}/${difficultyNumber.secondNum}`);
         setDifficultyMouseOverNumber(difficulty);
       } else if (difficultyNumber.secondNum! == difficulty) {
-        setDifficultyNumber({
-          selectedCount: 1,
-          firstNum: difficultyNumber.firstNum,
-        });
-        // 현재 난이도에 마우스 오버되도록 보정
+        router.push(`/${getModeText()}/${difficultyNumber.firstNum}`);
         setDifficultyMouseOverNumber(difficulty);
       }
       // 선택되어 있지 않던 난이도를 클릭해도 아무 일도 일어나지 않음

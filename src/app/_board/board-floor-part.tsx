@@ -1,10 +1,10 @@
 import { useAtomValue } from "jotai";
 import { FloorBoardProp } from "@apis";
 import { isModeSolarAtom } from "@store";
-import PatternBoardPatternPart from "./pattern-board-pattern-part";
+import PatternBoardPatternPart from "./board-pattern-part";
 
 // 현재 층수 및 해당하는 패턴들 목록 컴포넌트
-export default function PatternBoardFloorPart({
+export default function BoardFloorPart({
   floor,
   patterns,
 }: FloorBoardProp) {

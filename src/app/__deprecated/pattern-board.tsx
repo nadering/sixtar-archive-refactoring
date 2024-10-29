@@ -1,3 +1,6 @@
+/* 
+Deprecated: NO SSR Components
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -11,7 +14,7 @@ import { getBoardDataByDifficultyNumber, DifficultyBoardProp } from "@apis";
 import Image from "next/image";
 import SolarLogo from "@logo/solar.webp";
 import LunarLogo from "@logo/lunar.webp";
-import PatternBoardDifficultyPart from "./pattern-board-difficutly-part";
+import PatternBoardDifficultyPart from "./board-difficutly-part";
 
 // 서열표 컴포넌트
 export default function PatternBoard() {
@@ -118,3 +121,4 @@ export default function PatternBoard() {
     </div>
   );
 }
+ */

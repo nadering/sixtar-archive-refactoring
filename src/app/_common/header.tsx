@@ -36,8 +36,9 @@ export default function Header() {
           src={MainLogo}
           alt="main-logo"
           width={64}
+          priority
         />
-        {standbyModalActive && <StandbyModal />}
+        {standbyModalActive ? <StandbyModal /> : <StandbyModal hidden />}
       </div>
     </header>
   );

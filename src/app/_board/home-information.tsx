@@ -1,8 +1,23 @@
+"use client";
+
+import { useEffect } from "react";
+import { useSetAtom } from "jotai";
+import { difficultyNumberAtom } from "@store";
 import Image from "next/image";
 import InformationRami from "@public/information_rami.webp";
 
 // 메인 화면에서 사이트 사용 방법을 안내해주는 컴포넌트
 export default function HomeInformation() {
+  // 난이도
+  const setDifficultyNumber = useSetAtom(difficultyNumberAtom);
+
+  useEffect(() => {
+    // 설정된 난이도 초기화
+    setDifficultyNumber({
+      selectedCount: 0,
+    });
+  });
+
   return (
     <div className="flex flex-col items-center p-6 gap-y-5">
       <Image
