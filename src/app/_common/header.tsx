@@ -47,7 +47,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex flex-row-reverse items-center h-16 border-b-2 border-gray-500 gap-x-6 px-1">
+    <header className="relative flex flex-row-reverse items-center h-16 border-b-2 border-gray-500 gap-x-6 px-1">
       <div ref={standbyModalRef}>
         <Image
           className={`aspect-square cursor-pointer select-none [-webkit-user-drag:none] duration-150
