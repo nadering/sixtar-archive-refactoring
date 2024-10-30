@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from "react";
 import { useSetAtom } from "jotai";
-import { isUsingFullscreenModalAtom } from "@store";
+// import { isUsingFullscreenModalAtom } from "@store";
 
 // 모달 부분을 클릭하면 창이 열리고 유지되며,
 // 모달 외의 부분을 클릭하면 창이 닫히는 Custom Hook
@@ -9,12 +9,12 @@ export default function useModal(
   event: "click" | "contextmenu" = "click"
 ) {
   const [modalOpen, setModalOpen] = useState(false);
-  const setIsUsingFullscreenModal = useSetAtom(isUsingFullscreenModalAtom);
+  // const setIsUsingFullscreenModal = useSetAtom(isUsingFullscreenModalAtom);
 
   // 모달 부분이 클릭되면 실행되는 이벤트 리스너로, 모달 창을 열며 검정 화면을 불러옴
   const clickEventListener = () => {
     setModalOpen(true);
-    setIsUsingFullscreenModal(true);
+    // setIsUsingFullscreenModal(true);
   };
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function useModal(
     function handleClickOutside(e: { target: any }) {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setModalOpen(false);
-        setIsUsingFullscreenModal(false);
+        // setIsUsingFullscreenModal(false);
       }
     }
 

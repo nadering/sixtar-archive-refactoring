@@ -28,6 +28,8 @@
       "@common/*": ["./src/app/_common/*"],
       "@standby": ["./src/app/_standby/index.ts"],
       "@standby/*": ["./src/app/_standby/*"],
+      "@vote": ["./src/app/_vote/index.ts"],
+      "@vote/*": ["./src/app/_vote/*"],
       "@apis": ["./src/apis/index.ts"],
       "@apis/*": ["./src/apis/*"],
       "@store": ["./src/store/index.ts"],

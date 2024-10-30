@@ -1,8 +1,8 @@
 import { DifficultyBoardProp } from "@apis";
-import PatternBoardFloorPart from "./pattern-board-floor-part";
+import BoardFloorPart from "./board-floor-part";
 
 // 현재 난이도 및 해당하는 층 목록 컴포넌트
-export default function PatternBoardDifficultyPart({
+export default function BoardDifficultyPart({
   difficulty,
   floors,
 }: DifficultyBoardProp) {
@@ -11,7 +11,7 @@ export default function PatternBoardDifficultyPart({
       {floors.length != 0 &&
         floors.map((floorData) => {
           return (
-            <PatternBoardFloorPart
+            <BoardFloorPart
               key={floorData.floor}
               floor={floorData.floor}
               patterns={floorData.patterns}

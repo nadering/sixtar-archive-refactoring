@@ -1,6 +1,7 @@
 import { difficultyNumberType } from "@/store";
 import API_URL from ".";
 
+// 서열표 데이터 중 패턴 하나의 속성
 export interface PatternProp {
   musicId: number;
   name: string;
@@ -15,17 +16,19 @@ export interface PatternProp {
   bpmMax: string | null;
 }
 
+// 서열표의 층수 단위
 export interface FloorBoardProp {
   floor: number;
   patterns: PatternProp[];
 }
 
+// 서열표의 난이도 단위
 export interface DifficultyBoardProp {
   difficulty: number;
   floors: FloorBoardProp[];
 }
 
-// 현재 선택된 난이도 범위에서 서열표 데이터를 가져온 후 가공하여 반환합니다.
+// 현재 선택된 난이도 범위에서 서열표 데이터를 가져온 후 가공하여 반환
 export const getBoardDataByDifficultyNumber = async (
   difficultyNumber: difficultyNumberType,
   isModeSolar: boolean
@@ -33,11 +36,13 @@ export const getBoardDataByDifficultyNumber = async (
   // 데이터를 API에서 가져옴
   let data: DifficultyBoardProp[] = [];
 
+  // 선택된 난이도가 없으면 진행하지 않음
   if (difficultyNumber.selectedCount == 0) {
     return;
   }
 
   if (difficultyNumber.selectedCount == 1) {
+    // 선택된 난이도가 1개면, 단일 난이도 데이터를 가져옴
     const json = await (
       await fetch(
         `${API_URL}/board?mode=${isModeSolar ? "solar" : "lunar"}&min=${
@@ -50,6 +55,7 @@ export const getBoardDataByDifficultyNumber = async (
       data = json.board as DifficultyBoardProp[];
     }
   } else {
+    // 선택된 난이도가 2개면, 여러 난이도 데이터를 가져옴
     let urls: string[] = [];
     for (
       let difficulty: number = difficultyNumber.firstNum as number;
@@ -75,11 +81,12 @@ export const getBoardDataByDifficultyNumber = async (
     data = boardDataList;
   }
 
-  // 데이터를 가공해서 반환
+  // 반환된 데이터가 없다면, 서버 오류나 잘못된 입력 등이 발생했으므로 진행하지 않음
   if (data.length == 0) {
     return;
   }
 
+  // 1. 데이터를 층수 단위로 분류
   let floorDataList: FloorBoardProp[] = [];
   data.forEach((difficultyData, _) => {
     difficultyData.floors.forEach((floorData, _) => {
@@ -96,6 +103,7 @@ export const getBoardDataByDifficultyNumber = async (
     });
   });
 
+  // 2. 중복된 패턴을 제거
   floorDataList = floorDataList
     .map((data) => {
       const uniquePatterns = data.patterns.filter((pattern, index) => {
@@ -112,6 +120,7 @@ export const getBoardDataByDifficultyNumber = async (
       return b.floor - a.floor;
     });
 
+  // 3. 패턴을 다시 난이도와 층수 별로 분류
   let resultData: DifficultyBoardProp[] = [];
   let tempFloorList: FloorBoardProp[] = [];
   let currentDifficulty: number = Math.floor(
@@ -133,6 +142,7 @@ export const getBoardDataByDifficultyNumber = async (
     }
   });
 
+  // 4. 분류된 패턴을 반환
   resultData.push({
     difficulty: currentDifficulty,
     floors: [...tempFloorList],

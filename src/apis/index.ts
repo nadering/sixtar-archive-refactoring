@@ -7,5 +7,7 @@ import {
   FloorBoardProp,
   DifficultyBoardProp,
 } from "./get-board-data";
-export { getBoardDataByDifficultyNumber };
-export type { PatternProp, FloorBoardProp, DifficultyBoardProp };
+import { getActiveVoteData, VoteProp } from "./get-vote-data";
+
+export { getBoardDataByDifficultyNumber, getActiveVoteData };
+export type { PatternProp, FloorBoardProp, DifficultyBoardProp, VoteProp };

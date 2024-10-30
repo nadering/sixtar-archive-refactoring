@@ -11,10 +11,10 @@ import { getBoardDataByDifficultyNumber, DifficultyBoardProp } from "@apis";
 import Image from "next/image";
 import SolarLogo from "@logo/solar.webp";
 import LunarLogo from "@logo/lunar.webp";
-import PatternBoardDifficultyPart from "./pattern-board-difficutly-part";
+import BoardDifficultyPart from "./board-difficutly-part";
 
 // 서열표 컴포넌트
-export default function PatternBoard() {
+export default function Board() {
   // 서열표 데이터
   const [boardData, setBoardData] = useState<DifficultyBoardProp[]>([]);
 
@@ -107,7 +107,7 @@ export default function PatternBoard() {
         {boardData.length != 0 &&
           boardData.map((difficultyData) => {
             return (
-              <PatternBoardDifficultyPart
+              <BoardDifficultyPart
                 key={difficultyData.difficulty}
                 difficulty={difficultyData.difficulty}
                 floors={difficultyData.floors}

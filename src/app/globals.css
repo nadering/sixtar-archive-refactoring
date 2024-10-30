@@ -13,6 +13,7 @@ html, body {
 
 /* 
 주석 처리해둔 필터
+- gray-200: [filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]
 - gray-400: [filter:invert(80%)_sepia(0%)_saturate(28%)_hue-rotate(223deg)_brightness(90%)_contrast(92%)]
 - gray-800: [filter:invert(43%)_sepia(0%)_saturate(0%)_hue-rotate(348deg)_brightness(92%)_contrast(93%)]
 - solar-200: [filter:invert(83%)_sepia(9%)_saturate(908%)_hue-rotate(298deg)_brightness(101%)_contrast(102%)]

@@ -9,7 +9,7 @@ import {
 } from "@store";
 
 // 패턴 단일 컴포넌트
-export default function PatternBoardPatternPart({
+export default function BoardPatternPart({
   musicId,
   name,
   composer,
