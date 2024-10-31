@@ -57,7 +57,7 @@ export default function DataSetting() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-white border-2 border-solar rounded-2xl px-4 py-2 gap-y-1 select-none">
+    <div className="flex flex-col items-center bg-white border-2 border-solar rounded-2xl px-4 py-2 gap-y-1 shadow-xl select-none">
       <div className="flex flex-col items-center">
         <p className="text-solar text-3xl text-center font-bold">MODE</p>
         <Image

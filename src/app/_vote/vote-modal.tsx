@@ -5,7 +5,7 @@ import Vote from "./vote";
 export default function VoteModal({ data }: { data: VoteProp[] }) {
   return (
     <div className="absolute top-16 right-0 z-50 mx-2 my-2">
-      <div className="flex flex-col items-stretch bg-white border-2 border-solar rounded-xl px-3 py-2">
+      <div className="flex flex-col items-stretch bg-white border-2 border-solar rounded-xl px-3 py-2 shadow-xl">
         {data.length != 0 &&
           data.map((vote) => {
             return <Vote key={vote.id} data={vote} />;

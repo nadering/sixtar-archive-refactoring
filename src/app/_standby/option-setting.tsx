@@ -65,7 +65,7 @@ export default function OptionSetting() {
   }, []);
 
   return (
-    <div className="flex flex-col items-stretch bg-white border-2 border-solar rounded-2xl px-3 py-2 gap-y-1 select-none">
+    <div className="flex flex-col items-stretch bg-white border-2 border-solar rounded-2xl px-3 py-2 gap-y-1 shadow-xl select-none">
       <OptionCheckbox
         id="display-music-title"
         text="곡 제목"
